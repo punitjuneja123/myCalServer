@@ -42,7 +42,7 @@ WorkFlowRouter.post("/notifyhost/:beforetime", (req, res) => {
   // decresing the time user wants to get notification from the schduled time/start DateTime
   let sendingNotificationMailSec = totalSeconds * 1000 - beforeSeconds * 1000;
 
-  console.log(sendingNotificationMailSec);
+  console.log(CurrentDateTime,sendingNotificationMailSec);
   if (sendingNotificationMailSec >= 0) {
     setTimeout(() => {
       const EmailBody = reminderCreatedTemplate(details)
