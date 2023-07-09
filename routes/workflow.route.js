@@ -24,7 +24,8 @@ WorkFlowRouter.post("/create", async (req, res) => {
 WorkFlowRouter.post("/notifyhost/:beforetime", (req, res) => {
   let details = req.body;
   let beforeSeconds = req.params.beforetime;
-  schduledDateTime = details.schduledDateTime;
+  let CurrentDateTime = details.CurrentDateTime;
+  let schduledDateTime = details.schduledDateTime;
   console.log(details);
 
   // calculating difference between date and timein sec
@@ -36,16 +37,15 @@ WorkFlowRouter.post("/notifyhost/:beforetime", (req, res) => {
     return seconds;
   }
   // providing current DateTime and end DateTime
-  var CurrentDateTime = moment().format("YYYY-MM-DD hh:mm A");
   let totalSeconds = calculateSeconds(CurrentDateTime, schduledDateTime);
 
   // decresing the time user wants to get notification from the schduled time/start DateTime
   let sendingNotificationMailSec = totalSeconds * 1000 - beforeSeconds * 1000;
 
-  console.log(CurrentDateTime,sendingNotificationMailSec);
+  console.log(CurrentDateTime, sendingNotificationMailSec);
   if (sendingNotificationMailSec >= 0) {
     setTimeout(() => {
-      const EmailBody = reminderCreatedTemplate(details)
+      const EmailBody = reminderCreatedTemplate(details);
       // sendMail(details.TwSub, EmailBody, details.userEmail);
       console.log("Yes");
     }, sendingNotificationMailSec);
