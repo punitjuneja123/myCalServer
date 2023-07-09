@@ -46,8 +46,8 @@ WorkFlowRouter.post("/notifyhost/:beforetime", (req, res) => {
   if (sendingNotificationMailSec >= 0) {
     setTimeout(() => {
       const EmailBody = reminderCreatedTemplate(details);
-      sendMail(details.TwSub, EmailBody, details.userEmail);
       console.log("sending mail");
+      // sendMail(details.TwSub, EmailBody, details.userEmail);
     }, sendingNotificationMailSec);
     res.send({
       msg: "Workflow Created",
