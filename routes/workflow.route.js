@@ -3,7 +3,7 @@ const moment = require("moment");
 const { Usermodel } = require("../models/user.model");
 const { sendMail } = require("../config/mail");
 const WorkflowCreatedTemplate = require("../config/workflowstemplate");
-const reminderCreatedTemplate = require("../config/workflowstemplate");
+const reminderCreatedTemplate = require("../config/reminderTemplate");
 
 let WorkFlowRouter = express.Router();
 

@@ -203,7 +203,8 @@ let WorkflowCreatedTemplate = (instance, userName) => {
     <tbody>
       <tr>
         <td style="overflow-wrap:break-word;word-break:break-word;padding:10px 50px;font-family:arial,helvetica,sans-serif;" align="left">
-      
+          
+    <h1 style="margin: 0px; line-height: 140%; text-align: center; word-wrap: break-word; font-family: Bitter; font-size: 22px; "> You will recieve a reminder ${TwValue} ${TwUnit} before the event, As per the reminder requested by you.  </h1>
         </td>
       </tr>
     </tbody>
