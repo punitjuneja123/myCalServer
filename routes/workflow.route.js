@@ -15,7 +15,7 @@ WorkFlowRouter.post("/create", async (req, res) => {
   try {
     let userName = await Usermodel.findOne({ email });
     const EmailBody = WorkflowCreatedTemplate(workflow, userName.name);
-    sendMail("WorkFlow Scheduled", EmailBody, email);
+    // sendMail("WorkFlow Scheduled", EmailBody, email);
     res.json({ Message: "Workflow Created Successfully", Created: true });
   } catch (err) {
     console.log(err);
